@@ -18,11 +18,6 @@ gall_url={
     '픞갤' : 'pripara'
     }
 
-# options = webdriver.ChromeOptions() 
-# options.add_experimental_option("excludeSwitches", ["enable-logging"])
-# options.add_argument("start-maximized")
-# chrome_driver = webdriver.Chrome(options=options, executable_path='D:/chromedriver/chromedriver.exe')
-# chrome_driver.implicitly_wait(5)
 
 class DRIVER():
     def __init__(self):
@@ -118,18 +113,6 @@ class DRIVER():
     def current_url(self):
         return self.chrome_driver.current_url
 
-
-#######실베 최근글 찾는거#######
-# latesturl= None
-# latestindex= None
-# def check_latest_dcbest(driver):
-#     latesturl = str(driver.find_element(By.XPATH, "//tbody//tr[@class='ub-content us-post']//td[@class='gall_tit ub-word']//a").get_attribute('href'))
-#     print (latesturl)
-#     latestindex = parse("https://gall.dcinside.com/board/view/?id=dcbest&no={}&_dcbest=1&page=1", latesturl)
-#     print (latestindex)
-#     return latesturl, latestindex
-################################
-
 if __name__=="__main__":
     readlogfile= open('log.txt','r')
     History=[]
@@ -179,6 +162,6 @@ if __name__=="__main__":
             print(History)
             time.sleep(random.uniform(5,20))
         index -= 1
-        if step>=5:
+        if step>=100:
             break
         logfile.close()
