@@ -143,16 +143,19 @@ if __name__=="__main__":
     print(History)
 
     #### 일단 직접지정해두는데, 원래 사용자에게 입력받아야함 ####
-    GALLSELECT = '픞갤'
+    GALLSELECT = '실베'
     print(gall_url[GALLSELECT])
     print('start')
     driver = DRIVER()
     driver.dclogin(dcid=dc_id, dcpw=dc_pw, redirect=gall_url['갤메인']+gall_url[GALLSELECT])
-    startindex = 1761126
     myurl=gall_url['글보기']+gall_url[GALLSELECT]+'&no='
     print(myurl)
 
-    index = startindex
+    driver.move_latest_post()
+    startindex = parse('{}&no={}&{}',driver.current_url())[1]
+    
+    # startindex = 1761126
+    index = int(startindex)
     step = 0
     while True:
         logfile= open('log.txt','a')
@@ -174,9 +177,8 @@ if __name__=="__main__":
             History.append(index)
             print(index)
             print(History)
-            # time.sleep(random.uniform(5,20))
+            time.sleep(random.uniform(5,20))
         index -= 1
-        if step>=1:
+        if step>=5:
             break
         logfile.close()
-    
