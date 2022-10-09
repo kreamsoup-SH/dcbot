@@ -7,8 +7,8 @@ import time
 import random
 
 # file_userinfo = open("data/userinfo.txt","r")
-dc_id='voxindochim'
-dc_pw='dochim1212!'
+dc_id='아이디'
+dc_pw='비밀번호'
 
 # 갤러리 주소 모음
 gall_url={
@@ -125,7 +125,7 @@ if __name__=="__main__":
     History.sort(reverse=True)
     print(History)
 
-    #### 일단 직접지정해두는데, 원래 사용자에게 입력받아야함 ####
+    #### GALLSELECT 귀찮아서 일단 직접지정해두는데, 사용자에게 입력받아 쓰는게 좋을거같음 ####
     GALLSELECT = '실베'
     print(gall_url[GALLSELECT])
     print('start')
