@@ -14,8 +14,9 @@ dc_pw='비밀번호'
 gall_url={
     '갤메인' : 'https://gall.dcinside.com/board/lists?id=',
     '글보기' : 'https://gall.dcinside.com/board/view/?id=',
+    '마이너갤' : 'https://gall.dcinside.com/mgallery/board/lists/?id=',
     '실베' : 'dcbest',
-    '픞갤' : 'pripara'
+    '블아갤' : 'projectmx'
     }
 
 
